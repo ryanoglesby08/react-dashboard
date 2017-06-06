@@ -1,5 +1,4 @@
-import connectToPolling from "../lib/connectToPolling";
-import DynamicValue from "../lib/components/DynamicValue";
+import { connectToPolling, DynamicValue } from "../lib/dist/react-dashboard.es";
 
 const mapResponseToValue = (data) => data.random;
 

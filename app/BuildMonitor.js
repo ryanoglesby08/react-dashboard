@@ -1,5 +1,4 @@
-import connectToPolling from "../lib/connectToPolling";
-import DynamicColor from "../lib/components/DynamicColor";
+import { connectToPolling, DynamicColor } from "../lib/dist/react-dashboard.es";
 
 const mapResponseToColor = ({status}) => {
   switch(status) {
