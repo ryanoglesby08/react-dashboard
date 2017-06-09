@@ -1,6 +1,6 @@
 import React from "react"
 
-import { StaticValue } from "../lib/dist/react-dashboard.es";
+import { StaticValue } from "react-dashboard";
 
 const HelloWorld = () => <StaticValue>Hello World</StaticValue>;
 

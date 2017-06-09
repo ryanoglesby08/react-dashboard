@@ -1,4 +1,4 @@
-import { connectToPolling, DynamicValue } from "../lib/dist/react-dashboard.es";
+import { connectToPolling, DynamicValue } from "react-dashboard";
 
 const mapResponseToValue = (data) => data.random;
 

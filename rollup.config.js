@@ -5,10 +5,10 @@ import commonjs from "rollup-plugin-commonjs"
 import babel from "rollup-plugin-babel";
 
 export default {
-  entry: path.resolve(__dirname, "./src/main.js"),
+  entry: path.resolve("./src/main.js"),
   targets: [
-    {format: "es", dest: path.resolve(__dirname, "./dist/react-dashboard.es.js")},
-    {format: "cjs", dest: path.resolve(__dirname, "./dist/react-dashboard.cjs.js")}
+    {format: "es", dest: path.resolve("./dist/react-dashboard.es.js")},
+    {format: "cjs", dest: path.resolve("./dist/react-dashboard.cjs.js")}
   ],
   sourceMap: true,
 

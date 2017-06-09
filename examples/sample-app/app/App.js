@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Dashboard } from "../lib/dist/react-dashboard.es";
+import { Dashboard } from "react-dashboard";
 
 import HelloWorld from "./HelloWorld";
 import JiraPoller from "./JiraPoller";
