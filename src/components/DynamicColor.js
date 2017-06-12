@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import Tile from "../Tile/Tile";
 import TileBody from "../Tile/TileBody";
@@ -17,5 +18,10 @@ const DynamicColor = ({title, color, updatedAt}) => (
   </TileLayout>
 );
 DynamicColor.connectedProp = "color";
+DynamicColor.propTypes = {
+  title: PropTypes.string.isRequired,
+  color: PropTypes.string,
+  updatedAt: PropTypes.instanceOf(Date)
+};
 
 export default DynamicColor;

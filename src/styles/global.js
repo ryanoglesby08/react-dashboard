@@ -10,12 +10,6 @@ injectGlobal`
     height: 100%;
   }
 
-  #root {
-    ${noSpacing}
-
-    height: 100%;
-  }
-
   html {
     box-sizing: border-box;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -30,5 +24,15 @@ injectGlobal`
   *::after {
     box-sizing: inherit;
     font: inherit;
+  }
+  
+  #root {
+    ${noSpacing}
+
+    height: 100%;
+  }
+  
+  p {
+    ${noSpacing}
   }
 `

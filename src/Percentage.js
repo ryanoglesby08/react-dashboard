@@ -13,8 +13,8 @@ const percentage = (value) => {
   return formatter.format(value);
 };
 
-const Percentage = ({className, children}) => (
-  <span className={className}>{percentage(children)}</span>
+const Percentage = ({children}) => (
+  <span>{percentage(children)}</span>
 );
 Percentage.propTypes = {
   children: PropTypes.oneOfType([
