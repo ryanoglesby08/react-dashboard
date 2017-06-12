@@ -18,16 +18,10 @@ export default {
       include: "node_modules/**"
     }),
     babel({
-      babelrc: false, // Override the .babelrc file and disable modules transpilation
-      presets: [
-        ["env", {"modules": false}],
-        "react",
-        "stage-2"
-      ],
       plugins: ["external-helpers"],
       exclude: "node_modules/**"
     })
   ],
 
-  external: "react"
+  external: ["react", "prop-types"]
 }
