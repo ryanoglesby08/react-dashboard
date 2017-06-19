@@ -4,14 +4,14 @@
   "main": "src/index.js",
   "license": "MIT",
   "scripts": {
-    "lint": "eslint src/",
+    "lint": "eslint ./src rollup.config.js",
     "build": "rollup -c",
     "build:watch": "yarn build -- --watch",
-    "test": "mocha -c --require babel-register --recursive ./test",
+    "test": "BABEL_ENV=test mocha -c --require babel-register ./src/**/*.spec.js",
     "test:watch": "yarn test -- --watch",
     "sample-app:dev-server": "webpack-dev-server --progress --colors -d --config examples/sample-app/webpack.config.js --context examples/sample-app/ --content-base examples/sample-app/",
     "sample-app:backend": "node examples/sample-app/server.js",
-    "precommit": "yarn lint && yarn build"
+    "precommit": "yarn lint && yarn build && yarn test"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
