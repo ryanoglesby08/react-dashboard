@@ -12,8 +12,6 @@ export default (url, pollingIntervalMillis, mapResponseToValue) => {
           value: undefined,
           updatedAt: undefined
         };
-
-        this.setValue = this.setValue.bind(this);
       }
 
       componentDidMount() {
@@ -27,7 +25,7 @@ export default (url, pollingIntervalMillis, mapResponseToValue) => {
         }
       }
 
-      setValue() {
+      setValue = () => {
         fetch(url)
           .then((response) => response.json())
           .then(mapResponseToValue)
@@ -42,7 +40,7 @@ export default (url, pollingIntervalMillis, mapResponseToValue) => {
       render() {
         const {value, updatedAt} = this.state;
 
-        return React.createElement(component, {...this.props, [component.connectedProp]: value, updatedAt});
+        return React.createElement(component, {...this.props, value, updatedAt});
       }
     };
   };

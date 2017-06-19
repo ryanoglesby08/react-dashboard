@@ -1,9 +1,9 @@
 import "./styles/global";
 
-export {default as DynamicColor} from "./components/DynamicColor/DynamicColor";
-export {default as DynamicValue} from "./components/DynamicValue/DynamicValue";
+export {DynamicColorAdapter as DynamicColor} from "./connectToPolling/adapters";
+export {DynamicValueAdapter as DynamicValue} from "./connectToPolling/adapters";
 export {default as StaticValue} from "./components/StaticValue/StaticValue";
 
-export {default as connectToPolling} from "./connectToPolling";
+export {default as connectToPolling} from "./connectToPolling/connectToPolling";
 
 export {default as Dashboard} from "./Dashboard";

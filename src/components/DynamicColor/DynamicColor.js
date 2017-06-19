@@ -18,7 +18,6 @@ const DynamicColor = ({title, color, updatedAt}) => (
     </TileFooter>
   </TileWithBgColor>
 );
-DynamicColor.connectedProp = "color";
 DynamicColor.propTypes = {
   title: PropTypes.string.isRequired,
   color: PropTypes.string,

@@ -21,7 +21,6 @@ const DynamicValue = ({title, value, updatedAt, showChange}) => (
     </TileFooter>
   </Tile>
 );
-DynamicValue.connectedProp = "value";
 DynamicValue.propTypes = {
   title: PropTypes.string.isRequired,
   value: PropTypes.number,
