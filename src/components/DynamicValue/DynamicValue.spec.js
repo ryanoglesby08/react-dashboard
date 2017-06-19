@@ -10,13 +10,13 @@ import Tile from "../../Tile/Tile";
 import TileHeader from "../../Tile/TileHeader";
 import TileBody from "../../Tile/TileBody";
 import TileFooter from "../../Tile/TileFooter";
+import LastUpdated from "../../LastUpdated/LastUpdated";
 
 describe("DynamicValue", () => {
   chai.use(chaiEnzyme());
 
   const defaultProps = {
     title: "The title",
-    value: 50
   };
   const doShallow = (overrides = {}) => shallow(<DynamicValue {...defaultProps} {...overrides} />);
 
@@ -47,9 +47,9 @@ describe("DynamicValue", () => {
   });
 
   it("shows the last updated time in the footer", () => {
-    const updatedAt = new Date(2017, 6, 19);
+    const updatedAt = new Date();
     const dynamicValue = doShallow({updatedAt: updatedAt});
 
-    expect(dynamicValue.find(TileFooter).dive()).to.contain.text("7/19/2017, 12:00:00 AM");
+    expect(dynamicValue.find(TileFooter).dive()).to.contain(<LastUpdated at={updatedAt}/>);
   });
 });

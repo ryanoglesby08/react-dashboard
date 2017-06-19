@@ -1,21 +1,22 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import Tile from "../Tile/Tile";
-import TileBody from "../Tile/TileBody";
-import TileFooter from "../Tile/TileFooter";
+import Tile from "../../Tile/Tile";
+import TileBody from "../../Tile/TileBody";
+import TileFooter from "../../Tile/TileFooter";
+import LastUpdated from "../../LastUpdated/LastUpdated";
 
-const TileLayout = Tile.extend`
+const TileWithBgColor = Tile.extend`
   background-color: ${({bgColor}) => bgColor};
 `;
 
 const DynamicColor = ({title, color, updatedAt}) => (
-  <TileLayout bgColor={color}>
+  <TileWithBgColor bgColor={color}>
     <TileBody>{title}</TileBody>
     <TileFooter>
-      {updatedAt && `Last updated: ${updatedAt.toLocaleString()}`}
+      <LastUpdated at={updatedAt}/>
     </TileFooter>
-  </TileLayout>
+  </TileWithBgColor>
 );
 DynamicColor.connectedProp = "color";
 DynamicColor.propTypes = {

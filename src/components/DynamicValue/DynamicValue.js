@@ -5,9 +5,9 @@ import Tile from "../../Tile/Tile";
 import TileHeader from "../../Tile/TileHeader";
 import TileBody from "../../Tile/TileBody";
 import TileFooter from "../../Tile/TileFooter";
+import LastUpdated from "../../LastUpdated/LastUpdated";
 
 import PercentChange from "./PercentChange/PercentChange";
-
 
 const DynamicValue = ({title, value, updatedAt, showChange}) => (
   <Tile>
@@ -17,7 +17,7 @@ const DynamicValue = ({title, value, updatedAt, showChange}) => (
       {showChange && <PercentChange value={value}/>}
     </TileBody>
     <TileFooter>
-      {updatedAt && `Last updated: ${updatedAt.toLocaleString()}`}
+      <LastUpdated at={updatedAt}/>
     </TileFooter>
   </Tile>
 );

@@ -7,7 +7,7 @@
     "lint": "eslint ./src rollup.config.js",
     "build": "rollup -c",
     "build:watch": "yarn build -- --watch",
-    "test": "BABEL_ENV=test mocha -c --require babel-register ./src/**/*.spec.js",
+    "test": "BABEL_ENV=test mocha -c --require babel-register --recursive ./src",
     "test:watch": "yarn test -- --watch",
     "sample-app:dev-server": "webpack-dev-server --progress --colors -d --config examples/sample-app/webpack.config.js --context examples/sample-app/ --content-base examples/sample-app/",
     "sample-app:backend": "node examples/sample-app/server.js",
