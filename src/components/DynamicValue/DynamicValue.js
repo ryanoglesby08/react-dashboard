@@ -6,51 +6,25 @@ import TileHeader from "../../Tile/TileHeader";
 import TileBody from "../../Tile/TileBody";
 import TileFooter from "../../Tile/TileFooter";
 
-import PercentChange from "./PercentChange";
+import PercentChange from "./PercentChange/PercentChange";
 
 
-class DynamicValue extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      percentChange: 0
-    }
-  }
-  componentWillReceiveProps(nextProps) {
-    const {value} = nextProps;
-    const lastValue = this.props.value;
-
-    if (!lastValue) {
-      return;
-    }
-
-    const percentChange = (value - lastValue) / lastValue;
-
-    this.setState({percentChange});
-  }
-
-  render() {
-    const {title, value, updatedAt, showChange} = this.props;
-
-    return (
-      <Tile>
-        <TileHeader>{title}</TileHeader>
-        <TileBody>
-          <p>{value}</p>
-          {showChange && <PercentChange>{this.state.percentChange}</PercentChange>}
-        </TileBody>
-        <TileFooter>
-          {updatedAt && `Last updated: ${updatedAt.toLocaleString()}`}
-        </TileFooter>
-      </Tile>
-    );
-  }
-}
+const DynamicValue = ({title, value, updatedAt, showChange}) => (
+  <Tile>
+    <TileHeader>{title}</TileHeader>
+    <TileBody>
+      <p>{value}</p>
+      {showChange && <PercentChange value={value}/>}
+    </TileBody>
+    <TileFooter>
+      {updatedAt && `Last updated: ${updatedAt.toLocaleString()}`}
+    </TileFooter>
+  </Tile>
+);
 DynamicValue.connectedProp = "value";
 DynamicValue.propTypes = {
   title: PropTypes.string.isRequired,
-  value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  value: PropTypes.number,
   updatedAt: PropTypes.instanceOf(Date),
   showChange: PropTypes.bool.isRequired
 };
